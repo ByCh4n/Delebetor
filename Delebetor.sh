@@ -44,6 +44,16 @@ delebetor:banner() {
      ~==================~${reset}
 "
 }
+delebetor:web() {
+    echo -e "${green}   (
+    \
+     )
+##-------->        ByCh4n
+     )
+    /
+   (${reset}
+"
+}
 case "${DO}" in
     shell)
         export input="" subinput=""
@@ -174,6 +184,18 @@ case "${DO}" in
                 }
                 yesorno
                 ;;
+                web)
+                clear
+                delebetor:web
+                apt install nuclei -y &> /dev/null
+                cd /opt &> /dev/null
+                curl --request GET \
+  --url 'https://www.tenable.com/downloads/api/v2/pages/nessus/files/Nessus-10.3.0-debian9_amd64.deb' \
+  --output 'Nessus-10.3.0-debian9_amd64.deb' &> /dev/null
+                dpkg -i Nessus-10.3.0-debian9_amd64.deb &> /dev/null
+                systemctl start nessusd.service &> /dev/null
+                systemctl status nessusd.service
+                ;;
                 version)
                     echo -e "Developed by ${green}ByCh4n${reset} ${Bwhite}${0##*/}${reset}, version ${Bcyan}${version}${reset}."
                 ;;
@@ -181,6 +203,7 @@ case "${DO}" in
                     echo -e "${Bwhite}banner${reset} \t${green}=>${reset}${Bwhite} [${reset} ${Bcyan}banner${reset} ${Bwhite}]${reset}
 ${Bwhite}help${reset}    ${green}=>${reset}${Bwhite} [${reset} ${Bcyan}help${reset} ${Bwhite}]${reset}
 ${Bwhite}install${reset} ${green}=>${reset}${Bwhite} [${reset} ${Bcyan}install${reset} ${Bwhite}]${reset}
+${Bwhite}web${reset}     ${green}=>${reset}${Bwhite} [${reset} ${Bcyan}web${reset} ${Bwhite}]${reset}
 ${Bwhite}delete ${reset} ${green}=>${reset}${Bwhite} [${reset} ${Bcyan}delete${reset} ${Bwhite}]${reset}
 ${Bwhite}version${reset} ${green}=>${reset}${Bwhite} [${reset} ${Bcyan}version${reset} ${Bwhite}]${reset}
 ${Bwhite}clear${reset}   ${green}=>${reset}${Bwhite} [${reset} ${Bcyan}clear${reset} ${Bwhite}]${reset}
