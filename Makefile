@@ -10,4 +10,4 @@ uninstall:
 
 reinstall:
 	rm -f $(BINDIR)/delebetor
-	install -m 755 ./delebetor.sh $(BINDIR)/delebetor
+	install -m 755 ./Delebetor.sh $(BINDIR)/delebetor
