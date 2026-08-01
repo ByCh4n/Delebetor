@@ -81,4 +81,4 @@ Special thanks to [@lazypwny751](https://github.com/lazypwny751).
 
 ## License
 
-Licensed under the [GPL-3.0](LICENSE) license.
+Licensed under the [MIT](LICENSE) license.
